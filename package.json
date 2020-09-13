@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "next": "latest",
+    "prettier": "^2.1.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "swr": "^0.3.2"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "4.2.1",
