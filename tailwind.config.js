@@ -1,15 +1,16 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  content: ["./app/**/*.{ts,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        'accent-1': '#333',
+    extend: {},
+    colors: {
+      purple: {
+        DEFAULT: "hsl(265, 48%, 29%)",
+      },
+      white: {
+        DEFAULT: "#fff",
       },
     },
   },
   variants: {},
   plugins: [],
-}
+};
