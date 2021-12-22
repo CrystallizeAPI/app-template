@@ -4,6 +4,7 @@ module.exports = {
     extend: {},
     colors: {
       purple: {
+        light: "hsl(265, 48%, 90%)",
         DEFAULT: "hsl(265, 48%, 29%)",
       },
       white: {

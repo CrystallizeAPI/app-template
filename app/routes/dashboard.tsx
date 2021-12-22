@@ -1,6 +1,8 @@
 import { useLoaderData } from "remix";
 import type { LoaderFunction } from "remix";
+
 import fetchFromPIM from "~/lib/crystallize.server";
+import { NavBar } from "~/components/navbar";
 
 export const loader: LoaderFunction = async () => {
   const { data } = await fetchFromPIM({
@@ -29,22 +31,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <nav className="navbar p-6 bg-purple text-white flex justify-between items-center">
-        <a href="/">
-          <img
-            src="/crystallize_logo_white.svg"
-            alt="Crystallize logo"
-            width="106"
-            height="36"
-          />
-        </a>
-        <div>
-          <h1 className="text-3xl">Dashboard</h1>
-        </div>
-        <div>
-          <a href="/">Log out</a>
-        </div>
-      </nav>
+      <NavBar title="Dashboard" />
       <div className="mx-auto max-w-3xl p-6">
         <h2 className="mb-6 text-xl">
           Hi {me.firstName} {me.lastName}
@@ -58,8 +45,10 @@ export default function Dashboard() {
             them out:
             <ul className="list-none p-0 m-0 mt-3 flex gap-3 flex-wrap">
               {me.tenants.map((tenant: any) => (
-                <li key={tenant.tenant.identifier} className="appearance-none">
-                  {tenant.tenant.identifier}
+                <li key={tenant.tenant.identifier} className="m-0 p-0">
+                  <a href={`/fulfilment?tenantId=${tenant.tenant.id}`}>
+                    {tenant.tenant.identifier}
+                  </a>
                 </li>
               ))}
             </ul>
