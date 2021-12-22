@@ -51,7 +51,7 @@ export default function Dashboard() {
         </h2>
 
         {me.tenants.length === 0 ? (
-          "You don't have access to any tenants. How sad."
+          "You don't have access to any tenants. How sad 😢"
         ) : (
           <div>
             You've got access to {me.tenants.length} tenants. Awesome! 🤘 Check
